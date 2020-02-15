@@ -24,9 +24,9 @@ def echo(update, context):
     elif lang == 'he':
         dest = 'en'
     else:
-        return context.bot.send_message(chat_id=update.message.chat.id, text='Sorry I only support English and Hebrew.')
+        return context.bot.send_message(chat_id=update.effective_chat.id, text='Sorry I only support English and Hebrew.')
     val = translate(update.message.text, dest=dest).text
-    context.bot.send_message(chat_id=update.message.chat.id, text=val)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=val)
 
 
 def unknown(update, context):
