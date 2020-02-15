@@ -1,9 +1,12 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import logging
 from googletrans import Translator
 from emoji import emojize
 import langid
 
 updater = Updater(token='Token', use_context=True)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                    level=logging.INFO)
 
 
 def start(update, context):
